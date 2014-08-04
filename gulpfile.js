@@ -1,7 +1,6 @@
 var gulp = require('gulp'),
     pkg = require('./package.json'),
     plugins = require('gulp-load-plugins')(),
-    config = pkg,
     banner = [
         '/*!',
         ' * <%= config.name %> - <%= config.description %>',
@@ -11,7 +10,9 @@ var gulp = require('gulp'),
         ' * @license <%= config.license %>',
         ' */',
         ''
-    ].join('\n');
+    ].join('\n'),
+    config = pkg;
+
 config.today = (new Date()).toDateString();
 
 gulp.task('default', function() {
