@@ -13,20 +13,22 @@ var gulp = require('gulp'),
     ].join('\n'),
     config = pkg;
 
+config.src = "src/";
+config.dest = "dist/";
 config.today = (new Date()).toDateString();
 
 gulp.task('default', function() {
-    return gulp.src('src/' + pkg.name + '.js')
+    return gulp.src(config.src + config.name + '.js')
         .pipe(plugins.jshint())
         .pipe(plugins.jshint.reporter('default'))
         .pipe(plugins.header(banner, {
             config: config
         }))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest(config.dest))
         .pipe(plugins.uglify())
-        .pipe(plugins.concat(pkg.name + '.min.js'))
+        .pipe(plugins.concat(config.name + '.min.js'))
         .pipe(plugins.header(banner, {
             config: config
         }))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest(config.dest));
 });

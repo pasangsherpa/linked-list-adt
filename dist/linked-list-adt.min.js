@@ -1,6 +1,6 @@
 /*!
  * linked-list-adt - Linked List ADT for browser and nodejs
- * @version v0.0.0 - Mon Aug 04 2014
+ * @version v0.0.1 - Mon Aug 04 2014
  * @link https://github.com/pasangsherpa/linked-list-adt
  * @author Pasang Sherpa <pgyalzen@gmail.com> (https://github.com/pasangsherpa)
  * @license MIT
