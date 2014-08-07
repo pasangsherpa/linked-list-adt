@@ -95,7 +95,7 @@ Removes all element from the the list and returns the new size of the list.
 
 #### .iterator
 
-Returns an iterator to the list that iterates through the items in FIFO order.
+Returns an iterator to the list that iterates through the items.
 
 Type: `object`
 
