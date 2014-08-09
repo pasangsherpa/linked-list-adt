@@ -71,7 +71,15 @@ Returns the first element of the list.
 
 Type: `object`
 
-the element at the front of the linked-list.
+the element at the front of the list.
+
+#### .get(index) 
+
+Returns the element of the list in the given index and null if index out of bound.
+
+Type: `object`
+
+the element at the given index of the list.
 
 #### .isEmpty()
 
