@@ -1,6 +1,6 @@
 /*!
  * linked-list-adt - Linked List ADT for browser and nodejs
- * @version v0.0.1 - Fri Aug 08 2014
+ * @version v0.0.1 - Sun Aug 10 2014
  * @link https://github.com/pasangsherpa/linked-list-adt
  * @author Pasang Sherpa <pgyalzen@gmail.com> (https://github.com/pasangsherpa)
  * @license MIT
@@ -32,7 +32,23 @@
         }
 
         function remove(index) {
+        	if (typeof index !== 'undefined') {
+	        	root = removeAt(index, root);
+        	} else {
+        		root = removeAt(count - 1, root);
+        	}
+            count--;
+        }
 
+        function removeAt(index, node) {
+        	if (node === null) {
+        		throw new Error('removeAt(): No such element found.');
+        	} else if (index === 0) {
+        		return node.next;
+        	} else {
+        		node.next = removeAt(index - 1, node.next);
+        	}
+        	return node;
         }
 
         function first() {
@@ -55,7 +71,7 @@
         }
 
         function isEmpty() {
-            return size() === 0;
+            return count === 0;
         }
 
         function size() {

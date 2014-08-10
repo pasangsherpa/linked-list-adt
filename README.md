@@ -57,13 +57,19 @@ Type: `object`
 
 the element to be added to the list.
 
-#### .remove() `throws "LinkedList is empty" error` 
+#### .remove() `throws "No such element found` 
 
-Removes an element from the end of the list and returns the element.
+Removes an element from the end of the list.
 
-Type: `object`
+#### .remove(index) `throws "No such element found` 
 
-the element removed from the end of the list.
+Removes the element at the specified position in this list.
+
+##### index
+
+Type: `int`
+
+the index of the element to be removed.
 
 #### .first() `throws "LinkedList is empty" error` 
 
