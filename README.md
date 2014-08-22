@@ -25,14 +25,47 @@ $ bower install --save linked-list-adt
 
 ```js
 var LinkedList = require('linked-list-adt');
-var linkedlist = new LinkedList();
+var list = new LinkedList();
+list.add(1);
+list.first().element;
+list.remove();
 
+list.add(function(){console.log("hello world")});
+list.first().element();
+
+list.add("foo");
+
+list.size();
+list.isEmpty();
+
+var itr = list.iterator;
+
+while(itr.hasNext()) {
+  console.log(itr.next());
+}
 
 ```
 ```js
 <script type="text/javascript" src="https://raw.githubusercontent.com/pasangsherpa/linked-list-adt/master/dist/linked-list-adt.min.js"></script>
 <script type="text/javascript"> 
-  var linkedlist = new LinkedList();
+	var list = new LinkedList();
+	list.add(1);
+	list.first().element;
+	list.remove();
+
+	list.add(function(){console.log("hello world")});
+	list.first().element();
+
+	list.add("foo");
+
+	list.size();
+	list.isEmpty();
+
+	var itr = list.iterator;
+
+	while(itr.hasNext()) {
+	  console.log(itr.next());
+	}
 
 </script>
 ```
