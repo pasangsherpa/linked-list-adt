@@ -73,13 +73,43 @@
 			return count;
 		}
 
+		function Iterator() {
+			var lastAccessed = null,
+				current = null,
+				counter = 0;
+
+			function hasNext() {
+				return counter < count;
+			}
+
+			function next() {
+				if (!hasNext()) {
+					throw new Error('next(): No such element.');
+				}
+				if (!counter) {
+					current = root;
+				}
+				lastAccessed = current;
+				var element = current.element;
+				current = current.next;
+				counter++;
+				return element;
+			}
+
+			return {
+				hasNext: hasNext,
+				next: next
+			};
+		}
+
 		return {
 			add: add,
 			remove: remove,
 			first: first,
 			get: get,
 			isEmpty: isEmpty,
-			size: size
+			size: size,
+			iterator: new Iterator()
 		};
 	};
 
