@@ -25,14 +25,14 @@
 		}
 
 		function remove(index) {
-			var node = get(index? index : count - 1);
+			var node = getNode(index >= 0 ? index : count - 1);
 			if (typeof index !== 'undefined') {
 				root = removeAt(index, root);
 			} else {
 				root = removeAt(count - 1, root);
 			}
 			count--;
-			return node;
+			return node.element;
 		}
 
 		function removeAt(index, node) {
@@ -50,10 +50,10 @@
 			if (isEmpty()) {
 				throw new Error('first(): List is empty.');
 			}
-			return root;
+			return root.element;
 		}
 
-		function get(index) {
+		function getNode(index) {
 			if (index < 0 || index > count || root === null) {
 				return null;
 			}
@@ -63,6 +63,10 @@
 				current = current.next;
 			}
 			return current;
+		}
+
+		function get(index) {
+			return getNode(index).element;
 		}
 
 		function isEmpty() {

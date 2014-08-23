@@ -1,6 +1,6 @@
 {
   "name": "linked-list-adt",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Linked List ADT for browser and nodejs",
   "main": "dist/linked-list-adt.js",
   "scripts": {

@@ -27,11 +27,11 @@ $ bower install --save linked-list-adt
 var LinkedList = require('linked-list-adt');
 var list = new LinkedList();
 list.add(1);
-list.first().element;
+list.first();
 list.remove();
 
 list.add(function(){console.log("hello world")});
-list.first().element();
+list.first()();
 
 list.add("foo");
 
@@ -51,11 +51,11 @@ while(itr.hasNext()) {
 <script type="text/javascript"> 
 	var list = new LinkedList();
 	list.add(1);
-	list.first().element;
+	list.first();
 	list.remove();
 
 	list.add(function(){console.log("hello world")});
-	list.first().element();
+	list.first()();
 
 	list.add("foo");
 
@@ -136,10 +136,6 @@ Returns the number of elements in the list.
 Type: `int`
 
 the number of element in the list.
-
-#### .clear() 
-
-Removes all element from the the list and returns the new size of the list.
 
 #### .iterator
 
