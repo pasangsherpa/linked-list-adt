@@ -25,21 +25,21 @@ describe('LinkedList operation test', function() {
 		list.add("bar");
 		list.add("foo");
 
-		assert.equal(list.first().element, 1);
+		assert.equal(list.first(), 1);
 		assert.equal(list.size(), 3);
 		assert.equal(list.isEmpty(), false);
 	});
 
 	it('should be able to remove element from the list', function() {
-		assert.equal(list.remove().element, "foo");
+		assert.equal(list.remove(), "foo");
 		assert.equal(list.size(), 2);
 		assert.equal(list.isEmpty(), false);
 
-		assert.equal(list.remove().element, "bar");
+		assert.equal(list.remove(), "bar");
 		assert.equal(list.size(), 1);
 		assert.equal(list.isEmpty(), false);
 
-		assert.equal(list.remove().element, 1);
+		assert.equal(list.remove(), 1);
 		assert.equal(list.size(), 0);
 		assert.equal(list.isEmpty(), true);
 	});
